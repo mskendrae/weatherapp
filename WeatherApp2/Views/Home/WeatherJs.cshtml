@@ -1,0 +1,30 @@
+﻿
+@{
+    ViewBag.Title = "WeatherJs";
+}
+
+<h2>WeatherJs</h2>
+
+<p id="reply">
+    <button >Click me</button>
+
+
+</p>
+
+<script>
+   
+        //function myFunction() {
+        //    alert("Hello! I am an alert box!");
+        //}
+        $(button).click(function () {
+            $.get("http://api.openweathermap.org/data/2.5/weather?q=cleveland&APPID=ae4345fc9232591cb19529c32662315&units=imperial", function (response) {
+                //    response
+                console.log(response);
+                weather = ko.mapping.fromJS(response);  //populate the weather object
+                ko.applyBindings(weather);
+
+                 });
+        });
+    
+
+</script>
